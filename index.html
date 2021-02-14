@@ -1,0 +1,520 @@
+<!doctype html>
+<html>
+<head>
+	<script type="text/javascript" src="https://awaps.yandex.net/data/lib/adsdk.js"> 
+   </script>
+	<meta charset="utf-8">
+	<meta name="ad.size" content="width=480,height=320">
+	<title>Banner-480-320</title>
+</head>
+<body>
+
+<style>
+	@keyframes bypro_on {
+		from {
+			opacity: 0;
+		}
+		15% {
+			opacity: 1;
+		}
+		85% {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+		}
+	}
+	@keyframes bypro_on_offers {
+		from {
+			opacity: 0;
+		}
+		5% {
+			opacity: 1;
+		}
+		95% {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+		}
+	}
+	@keyframes bypro_last_on {
+		from {
+			opacity: 0;
+		}
+		15% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	@keyframes bypro_ray_light {
+		from {
+			transform: rotate(7deg);
+		}
+		50% {
+			transform: rotate(1deg);
+		}
+		100% {
+			transform: rotate(7deg);
+		}
+	}
+	
+	@keyframes bypro_light_around {
+		from {
+			left: 0;
+		}
+		50% {
+			left: -43px;
+		}
+		100% {
+			left: 0;
+		}
+	}
+
+	@keyframes bypro_ray_off {
+		from {
+			opacity: .5;
+		} 
+		to {
+			opacity: 0;
+		}
+	}
+
+	@keyframes bypro_light_around_big {
+		from {
+		    width: 80px;
+    		height: 55px;
+    		top: 0;
+    		left: 0;
+		}
+		to {
+			width: 150px;
+    		height: 105px;
+    		top: 10px;
+    		left: 90px;
+		}
+	}
+	@keyframes bypro_logo_big {
+		from {
+			font-size: 28px;
+		    padding-top: 17px;
+		    padding-left: 5px;
+		}
+		to {
+			font-size: 42px;
+			padding-top: 32px;
+    		padding-left: 22px;
+		}
+	}
+
+	body, img, p, h1, h2, h3, h4, h5, h6 {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		outline: 0;
+	}
+
+	.bypro_banner_wrapper {
+		overflow: hidden;
+		width: 480px;
+		height: 320px;
+		border: 1px solid #8a898a;
+	    position: relative;
+	}
+	.bypro_banner_wrapper h4 {
+		font-family: Comic Sans MS, Italic;
+		font-size: 18px;
+		color: white;
+		text-transform: uppercase;
+		text-decoration: none;
+		text-align: center;
+		opacity: 0;
+	}
+
+	.bypro_h4_on {
+		animation: bypro_on 3.4s ease-in-out forwards .5s;
+	}
+	.bypro_h4_offers {
+		animation: bypro_on_offers 4s ease-in-out forwards .5s;
+	}
+	.bypro_on_last {
+		animation: bypro_last_on 2s ease-in-out forwards;
+	}
+	
+	.bypro_img_back {
+		z-index: 99;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		transition: left 14s linear;
+	}
+	.bypro_img_one {
+		opacity: 1;
+		z-index: 100;
+		left: 0;
+	}
+	.bypro_img_two {
+		z-index: 101;
+	}
+	.bypro_img_three {
+		z-index: 102;
+		left: -20%;
+	}
+	.bypro_img_four {
+		z-index: 103;
+	}
+
+	.bypro_h4_off {
+		position: absolute;
+		margin: auto;
+		top: 50px;
+		left: 0;
+		right: 0;
+		z-index: 999;
+	}
+
+	.bypro_banner_right {
+		left: -100%;
+		opacity: 1 !important;
+	}
+	.bypro_banner_stop {
+		left: 0;
+		opacity: 1 !important;
+	}
+
+	.bypro_light_wrapper {
+		position: absolute;
+	    top: 15px;
+	    left: 80px;
+	    opacity: 0;
+	    transition: opacity .4s ease-in-out;
+	    z-index: 1000;
+	}
+	.bypro_light {
+		width: 80px;
+	    height: 55px;
+	    z-index: 1099;
+	    border: 4px solid white;
+	    border-radius: 50%;
+	    box-shadow: 0px 4px 7px 10px white;
+	    background-color: white;
+	    position: absolute;
+    	left: 0;
+    	opacity: .9;
+	}
+	.bypro_light_wrapper h4 {
+		color: #585858;
+	    opacity: 1;
+	    margin: auto;
+	    font-size: 28px;
+	    padding-top: 17px;
+    	padding-left: 5px;
+	    font-family: Trebuchet MS;
+	    z-index: 1099;
+	    position: absolute;
+	    top: 0;
+    	left: 0;
+    	
+	}
+	.bypro_ray {
+		height: 415px;
+	    box-shadow: 0px 7px 15px 16px #ffffff;
+	    background-color: #ffffff;
+	    transform: rotate(7deg);
+	    position: absolute;
+	    width: 70px;
+	    left: -47px;
+	    top: 31px;
+	    opacity: .5;
+	    transform-origin: left bottom;
+	    z-index: 1009;
+	}
+	.bypro_h4_four {
+		top:140px;
+		left:150px;
+		background-color: rgba(130, 130, 130, 0.7);
+	    padding: 2px;
+	    border-radius: 2px 0 0 2px;
+	    transition: top 1s ease-in-out;
+	}
+	.h4_top {
+		top: 220px;
+	}
+	.offers {
+		width: 275px;
+	    left: 35%;
+	    line-height: 1.7;
+	    top: 30px;
+	    font-size: 20px !important;
+	}
+	.slogan {
+		font-size: 28px !important;
+		opacity: 0;
+	    top: 168px;
+	    transition: opacity .4s ease-in-out 1s;
+	}
+	.bypro_opacity {
+		opacity: 1 !important;
+	}
+
+	.bypro_ray_start {
+		animation: bypro_ray_light 2.9s ease-in-out forwards infinite;
+	}
+	.bypro_light_around {
+		animation: bypro_light_around 2.9s ease-in-out forwards infinite;
+	}
+	.bypro_ray_is_off {
+		animation: bypro_ray_off .8s ease-in-out forwards;
+	}
+
+	.bypro_light_big_on {
+		animation: bypro_light_around_big 1.4s ease-in-out forwards;
+	}
+	.bypro_logo_big_on {
+		animation: bypro_logo_big 1.4s ease-in-out forwards;
+	}
+
+	.bypro_button_wrapper {
+		position: absolute;
+		top: 285px;
+    	right: 5px;
+	}
+	.bypro_button_wrapper, .bypro_button_wrapper .bypro_button, 
+	.bypro_button_wrapper .bypro_button h4, .bypro_button_wrapper .bypro_button span {
+		z-index: 9999;
+		opacity: 1;
+		font-family: Trebuchet MS;
+	}
+	.bypro_button_wrapper .bypro_button h4 {
+		background-color: hsla(147, 97%, 26%, 0.48);
+	    padding: 5px;
+	    padding-right: 0;
+	    border-radius: 2px;
+	}
+	.bypro_button_wrapper .bypro_button h4 span:first-child {
+		padding-right: 5px;
+	}
+
+	.bypro_ref {
+		background-color: red;
+	    padding: 5px 5px 5px 0;
+	    border-radius: 2px;
+	}
+
+</style>
+
+	<a id="click1_area" href="#" target="_blank">
+		<div class="bypro_banner_wrapper">
+
+			<div class="bypro_img_back bypro_img_one">
+				<img src="background-one.jpg">
+			</div>
+			<div class="bypro_img_back bypro_img_two">
+				<img src="background-three.jpg">
+			</div>
+			<div class="bypro_img_back bypro_img_three">
+				<img src="background-four.jpg">
+			</div>
+			<div class="bypro_img_back bypro_img_four">
+				<img src="background-five.jpg">
+			</div>
+		
+		<div class="bypro_light_wrapper">
+			<div class="bypro_light">
+				<h4>IT911</h4>
+			</div>
+			
+			<div class="bypro_ray">&nbsp;</div>
+		</div>
+
+			<h4 class="bypro_h4_off">Когда ночь спускается на город...</h4>
+			<h4 class="bypro_h4_off">Когда перестаёт работать интернет...</h4>
+			<h4 class="bypro_h4_off">Когда 1С нуждается в настройке...</h4>
+			<h4 class="bypro_h4_off">Когда ваша сеть в опасности...</h4>
+			<h4 class="bypro_h4_off bypro_h4_four">Этому городу нужен герой</h4>
+
+			<h4 class="bypro_h4_off offers">Обслуживание компьютерных сетей и оборудования</h4>
+			<h4 class="bypro_h4_off offers">Установка и настройка компьютеров</h4>
+			<h4 class="bypro_h4_off offers">Установка и настройка ПО <br/>Настройка 1С</h4>
+			<h4 class="bypro_h4_off offers">Полный спектр компьютерных услуг</h4>
+			<h4 class="bypro_h4_off slogan">Вызови нас один раз</h4>
+
+			<div class="bypro_button_wrapper">
+				<div class="bypro_button">
+					<h4><span>it911.by</span><span class="bypro_ref"> Перейти</span></h4>
+				</div>
+			</div>
+		</div>
+	</a>
+
+	<script> 
+   		document.getElementById("click1_area").href = yandexHTML5BannerApi.getClickURLNum(1); 
+   	</script>
+
+	<script>
+		(function () {
+			var wrapper = document.getElementsByClassName('bypro_banner_wrapper')[0];
+			var back = wrapper.getElementsByTagName('div');
+			var h4 = wrapper.getElementsByClassName('bypro_h4_off');
+			var light = wrapper.getElementsByClassName('bypro_light_wrapper')[0];
+			var ray = light.getElementsByClassName('bypro_ray')[0];
+			var around_ray = light.getElementsByClassName('bypro_light')[0];
+			var logo_ray = around_ray.getElementsByTagName('h4')[0];
+
+
+			function super_bypro_animation() {
+				var time_one = setTimeout(function() {
+					back[0].classList.add('bypro_banner_right');
+					h4[0].classList.add('bypro_h4_on');
+
+					var time_two = setTimeout(function() {
+						h4[0].classList.remove('bypro_h4_on');
+						h4[1].classList.add('bypro_h4_on');
+						back[0].classList.remove('bypro_banner_right');
+						back[1].classList.add('bypro_banner_right'); 
+
+						var time_three = setTimeout(function() {
+							h4[1].classList.remove('bypro_h4_on');
+							h4[2].classList.add('bypro_h4_on');
+							back[1].classList.remove('bypro_banner_right');
+							back[2].classList.add('bypro_banner_right'); 
+
+							var time_four = setTimeout(function() {
+								h4[2].classList.remove('bypro_h4_on');
+								h4[3].classList.add('bypro_h4_on');
+								back[2].classList.remove('bypro_banner_right');
+								back[3].classList.add('bypro_banner_right'); 
+
+								var time_five = setTimeout(function() {
+									h4[3].classList.remove('bypro_h4_on');
+									h4[4].classList.add('bypro_on_last');
+
+									back[0].classList.remove('bypro_banner_right');
+									back[1].classList.remove('bypro_banner_right'); 
+									back[2].classList.remove('bypro_banner_right'); 
+									back[3].classList.remove('bypro_banner_right'); 
+
+									back[0].classList.add('bypro_banner_stop');
+									back[1].classList.add('bypro_banner_stop');
+									back[2].classList.add('bypro_banner_stop');
+									back[3].classList.add('bypro_banner_stop');
+
+									back[0].classList.remove('bypro_banner_stop');
+									back[1].classList.remove('bypro_banner_stop');
+									back[2].classList.remove('bypro_banner_stop');
+									back[3].classList.remove('bypro_banner_stop');
+
+									var time_six = setTimeout(function() {
+										light.classList.add('bypro_opacity');
+
+										var time_seven = setTimeout(function() {
+											ray.classList.add('bypro_ray_start');
+											around_ray.classList.add('bypro_light_around');
+											back[0].classList.add('bypro_banner_right');
+											h4[4].classList.add('h4_top');
+											h4[5].classList.add('bypro_h4_offers');
+
+											var time_eight = setTimeout(function() {
+												h4[5].classList.remove('bypro_h4_offers');
+												h4[6].classList.add('bypro_h4_offers');
+												back[0].classList.remove('bypro_banner_right');
+												back[1].classList.add('bypro_banner_right'); 
+
+												var time_nine = setTimeout(function() {
+													h4[6].classList.remove('bypro_h4_offers');
+													h4[7].classList.add('bypro_h4_offers');
+													back[1].classList.remove('bypro_banner_right'); 
+													back[2].classList.add('bypro_banner_right'); 
+
+													var time_ten = setTimeout(function() {
+														h4[7].classList.remove('bypro_h4_offers');
+														h4[8].classList.add('bypro_h4_offers');
+														back[2].classList.remove('bypro_banner_right'); 
+														back[3].classList.add('bypro_banner_right'); 
+
+														var time_eleven = setTimeout(function() {
+															h4[8].classList.remove('bypro_h4_offers');
+
+															back[0].classList.remove('bypro_banner_right');
+															back[1].classList.remove('bypro_banner_right'); 
+															back[2].classList.remove('bypro_banner_right'); 
+															back[3].classList.remove('bypro_banner_right'); 
+
+															back[0].classList.add('bypro_banner_stop');
+															back[1].classList.add('bypro_banner_stop');
+															back[2].classList.add('bypro_banner_stop');
+															back[3].classList.add('bypro_banner_stop');
+
+															back[0].classList.remove('bypro_banner_stop');
+															back[1].classList.remove('bypro_banner_stop');
+															back[2].classList.remove('bypro_banner_stop');
+															back[3].classList.remove('bypro_banner_stop');
+
+															ray.classList.remove('bypro_ray_start');
+															around_ray.classList.remove('bypro_light_around');
+															ray.classList.add('bypro_ray_is_off');
+
+															around_ray.classList.add('bypro_light_big_on');
+															logo_ray.setAttribute('class', 'bypro_logo_big_on');
+															h4[9].classList.add('bypro_opacity');
+
+															var time_last = setTimeout(function() {
+
+																light.classList.remove('bypro_opacity');
+																ray.classList.remove('bypro_ray_start');
+																around_ray.classList.remove('bypro_light_around');
+																h4[4].classList.remove('bypro_on_last');
+																h4[4].classList.remove('h4_top');
+																h4[9].classList.remove('bypro_opacity');
+
+																var time_last_last = setTimeout(function() {
+																	ray.classList.remove('bypro_ray_is_off');
+																	around_ray.classList.remove('bypro_light_big_on');
+																	logo_ray.removeAttribute('class');
+																	
+
+																	clearTimeout(time_eleven);
+																	clearTimeout(time_ten);
+																	clearTimeout(time_nine);
+																	clearTimeout(time_eight);
+																	clearTimeout(time_seven);
+																	clearTimeout(time_six);
+																	clearTimeout(time_five);
+																	clearTimeout(time_four);
+																	clearTimeout(time_three);
+																	clearTimeout(time_two);
+																	clearTimeout(time_one);
+																	clearTimeout(time_last);
+
+																}, 1500);
+															}, 4500);
+
+														}, 4900);
+													}, 4900);
+												}, 4900);
+											}, 4900);
+										}, 1000);
+									}, 1200);
+								}, 3900);
+							}, 3900);
+						}, 3900);
+					}, 3900);
+				}, 500);
+			}
+
+			super_bypro_animation();
+
+			setInterval(function() {
+
+				super_bypro_animation();
+			
+			}, 37900 + 4500 + 1500);
+
+		})();
+	</script>
+
+</body>
+</html>
